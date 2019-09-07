@@ -1,8 +1,6 @@
 from SSNNetwork import *
 import sys
 
-net1 = load_batch('network2', DATA_PATH + '/' + 'Simple_0.2_100_')
-
 argv = sys.argv
 # neuron number
 n = int(sys.argv[1])
@@ -11,7 +9,7 @@ Ro = float(sys.argv[2])
 
 RES_FOLDER = BATCH_FOLDER + '/' + 'classification_' + str(Ro) + "_" + str(n)
 
-set_device('cpp_standalone')
+set_device('cpp_standalone', clean=True)
 
 
 def test(RES_FOLDER):
@@ -40,7 +38,7 @@ def test(RES_FOLDER):
     save_batch(res_dict, '_eval', RES_FOLDER)
     res = evaluate_neurons(test_batch.get('labels'), results, iden_batch)
 
-    print('scalar product', res.get('pred_key'))
+    print('scalar product', res.get('pred_vec'))
     print('highest  rate  classification', res.get('pred_neu'))
     save_batch(res, '_final_results', RES_FOLDER)
 

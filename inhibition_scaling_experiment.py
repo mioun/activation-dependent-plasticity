@@ -1,8 +1,6 @@
 from SSNNetwork import *
 import sys
 
-net1 = load_batch('network2', DATA_PATH + '/' + 'Simple_0.2_100_')
-
 argv = sys.argv
 
 # inhibition weight w_inh
@@ -43,7 +41,7 @@ def test(RES_FOLDER):
 
     res = evaluate_neurons(test_batch.get('labels'), results, iden_batch)
 
-    print('scalar product', res.get('pred_vac'))
+    print('scalar product', res.get('pred_vec'))
     print('highest  rate  classification', res.get('pred_neu'))
 
     save_batch(res, '_final_results', RES_FOLDER)

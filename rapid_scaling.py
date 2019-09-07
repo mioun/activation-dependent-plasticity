@@ -13,7 +13,7 @@ start_folder_name = sys.argv[4]
 
 RES_FOLDER = BATCH_FOLDER + '/' + start_folder_name
 
-# set_device('cpp_standalone')
+set_device('cpp_standalone')
 
 
 def test():
