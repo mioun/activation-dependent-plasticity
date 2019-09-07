@@ -44,7 +44,27 @@ Scripts generate output folder containing networks from each learning epoch. Scr
 To perform the rapid scaling, the **rapid_scaling.py** script needs to be executed. Scripts takes four arguments *Ro, *ext*, *start_batch_name*, *start_batch_folder*.
 *Ro* argument describes higher scaling constant than in the classification phase, *ext* is the increase in excitatory time constant to perform classification after rapid scaling,
 *start_batch_name* is the name of the network on which the rapid scaling is performed, and *start_batch_folder* is the folder generated during the classification phase, inside
-*start_batch_folder*, *start_batch_name* network is kept. 
+*start_batch_folder*, *start_batch_name* network is kept.
+```
+├── classification.py
+├── data
+│   ├── 6000_1batch_
+│   ├── classification_0.1_20
+│   │   ├── _eval
+│   │   ├── _final_results
+│   │   ├── _iden
+│   │   └── network0
+│   ├── t10k-images-idx3-ubyte
+│   ├── t10k-labels-idx1-ubyte
+│   ├── test_batch
+│   ├── train-images-idx3-ubyte
+│   └── train-labels-idx1-ubyte
+├── inhibition_scaling_experiment.py
+├── rapid_scaling.py
+├── SSNNetwork.py
+├── tree.txt
+└── utils.py
+```
 
 ```console
 python rapid_scaling.py 0.4 0.3 network0 classification_0.1_20
