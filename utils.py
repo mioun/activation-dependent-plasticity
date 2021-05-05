@@ -16,8 +16,8 @@ import re
 import time
 import errno
 
-DATA_PATH = './data/'
-BATCH_FOLDER = './data/'
+DATA_PATH = './data'
+BATCH_FOLDER = './data'
 
 n_rate = 16.0
 
